@@ -1,0 +1,19 @@
+[
+  {
+    "id": "1",
+    "image": "/assets/images/banners/bannerin.jpg",
+    "url": "/shop/left-sidebar"
+  },
+  {
+    "id": "2",
+    "image": "/assets/images/banners/bannerin2.jpg",
+    "url": "/shop/left-sidebar"
+  },
+  {
+    "id": "3",
+    "image": "/assets/images/hero-slider/hero-slider-one/3.jpg",
+    "subtitle": "ACCESSORIES",
+    "title": "Tribeca Hubert, <br> Pendant",
+    "url": "/shop/left-sidebar"
+  }
+]

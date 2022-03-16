@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "image": "/assets/images/pisos-cat/PisoCat1.jpg",
+    "name": "Pisos de madeira",
+    "count": 1,
+    "url": "/shop/left-sidebar"
+  },
+  {
+    "id": "2",
+    "image": "/assets/images/pisos-cat/PisoCat2.jpg",
+    "name": "Porcelanatos",
+    "count": 2,
+    "url": "/shop/left-sidebar"
+  },
+  {
+    "id": "3",
+    "image": "/assets/images/pisos-cat/PisoCat3.jpg",
+    "name": "Pisos cerâmicos",
+    "count": 3,
+    "url": "/shop/left-sidebar"
+  },
+  {
+    "id": "4",
+    "image": "/assets/images/pisos-cat/PisoCat4.jpg",
+    "name": "Pisos vinílicos",
+    "count": 4,
+    "url": "/shop/left-sidebar"
+  },
+  {
+    "id": "5",
+    "image": "/assets/images/category/women.jpg",
+    "name": "Piso ...",
+    "count": 5,
+    "url": "/shop/left-sidebar"
+  }
+]
