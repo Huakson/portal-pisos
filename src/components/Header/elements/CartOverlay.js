@@ -36,7 +36,7 @@ const CartOverlay = ({
         </button>
         {/*=======  offcanvas cart content container  =======*/}
         <div className="cart-overlay__content-container">
-          <h3 className="cart-title">Cart</h3>
+          <h3 className="cart-title">Carrinho</h3>
           {cartItems.length >= 1 ? (
             <div className="cart-product-wrapper">
               <div className="cart-product-container">
@@ -119,22 +119,18 @@ const CartOverlay = ({
                   href="/other/cart"
                   as={process.env.PUBLIC_URL + "/other/cart"}
                 >
-                  <a>view cart</a>
+                  <a>Visualizar carrinho</a>
                 </Link>
                 <Link
-                  href="/other/checkout"
-                  as={process.env.PUBLIC_URL + "/other/checkout"}
+                  href="/checkout/"
+                  as={process.env.PUBLIC_URL + "/checkout"}
                 >
-                  <a>checkout</a>
+                  <a>Finalizar compra</a>
                 </Link>
               </div>
-              {/*=======  free shipping text  =======*/}
-              <p className="free-shipping-text">
-                Free Shipping on All Orders Over $100!
-              </p>
             </div>
           ) : (
-            "No items found in cart"
+            "Carrinho vazio"
           )}
         </div>
       </div>

@@ -22,7 +22,7 @@ const CustomForm = ({ status, message, onValidated }) => {
           className="email"
           ref={(node) => (email = node)}
           type="email"
-          placeholder="Your email address"
+          placeholder="Digite seu email..."
         />
         <button className="button" onClick={submit}>
           <IoIosArrowRoundForward />

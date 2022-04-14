@@ -4,15 +4,15 @@ import Link from "next/link";
 import { Container, Row, Col } from "react-bootstrap";
 import Paginator from "react-hooks-paginator";
 import { SlideDown } from "react-slidedown";
-import { LayoutFive, LayoutTwo } from "../../components/Layout";
-import { BreadcrumbOne } from "../../components/Breadcrumb";
-import { getSortedProducts } from "../../lib/product";
+import { LayoutFive, LayoutTwo } from "../components/Layout";
+import { BreadcrumbOne } from "../components/Breadcrumb";
+import { getSortedProducts } from "../lib/product";
 import {
   ShopHeader,
   ShopFilter,
   ShopSidebar,
   ShopProducts
-} from "../../components/Shop";
+} from "../components/Shop";
 
 const LeftSidebar = ({ products }) => {
   const [layout, setLayout] = useState("grid four-column");
@@ -58,7 +58,7 @@ const LeftSidebar = ({ products }) => {
     <LayoutFive>
       {/* breadcrumb */}
       <BreadcrumbOne
-        pageTitle="Shop Left Sidebar"
+        pageTitle="Nossos produtos"
         backgroundImage="/assets/images/backgrounds/breadcrumb-bg-1.png"
       />
 

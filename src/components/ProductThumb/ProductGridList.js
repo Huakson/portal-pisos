@@ -30,9 +30,9 @@ const ProductGridList = ({
           {/*=======  single product image  =======*/}
           <div className="product-grid__image">
             <Link
-              href={`/shop/product-basic/[slug]?slug=${product.slug}`}
+              href={`/produto/[slug]?slug=${product.slug}`}
               as={
-                process.env.PUBLIC_URL + "/shop/product-basic/" + product.slug
+                process.env.PUBLIC_URL + "/produto/" + product.slug
               }
             >
               <a className="image-wrap">
@@ -58,9 +58,9 @@ const ProductGridList = ({
               ) : (
                 ""
               )}
-              {product.new ? <span className="hot">New</span> : ""}
+              {product.new ? <span className="hot">Novo</span> : ""}
               {product.stock === 0 ? (
-                <span className="out-of-stock">out</span>
+                <span className="out-of-stock">Off</span>
               ) : (
                 ""
               )}
@@ -70,8 +70,8 @@ const ProductGridList = ({
               <Tooltip
                 title={
                   wishlistItem !== undefined
-                    ? "Added to wishlist"
-                    : "Add to wishlist"
+                    ? "Adicionado a lista de desejos"
+                    : "Adicionar a lista de desejos"
                 }
                 position="left"
                 trigger="mouseenter"
@@ -95,8 +95,8 @@ const ProductGridList = ({
               <Tooltip
                 title={
                   compareItem !== undefined
-                    ? "Added to compare"
-                    : "Add to compare"
+                    ? "Adicionado a comparação"
+                    : "Adicionar a comparação"
                 }
                 position="left"
                 trigger="mouseenter"
@@ -118,7 +118,7 @@ const ProductGridList = ({
 
               {/* quick view */}
               <Tooltip
-                title="Quick view"
+                title="Visualização rápida"
                 position="left"
                 trigger="mouseenter"
                 animation="shift"
@@ -140,10 +140,10 @@ const ProductGridList = ({
             <div className="title">
               <h3>
                 <Link
-                  href={`/shop/product-basic/[slug]?slug=${product.slug}`}
+                  href={`/produto/[slug]?slug=${product.slug}`}
                   as={
                     process.env.PUBLIC_URL +
-                    "/shop/product-basic/" +
+                    "/produto/" +
                     product.slug
                   }
                 >
@@ -157,14 +157,14 @@ const ProductGridList = ({
                 </a>
               ) : product.variation && product.variation.length >= 1 ? (
                 <Link
-                  href={`/shop/product-basic/[slug]?slug=${product.slug}`}
+                  href={`/produto/[slug]?slug=${product.slug}`}
                   as={
                     process.env.PUBLIC_URL +
-                    "/shop/product-basic/" +
+                    "/produto/" +
                     product.slug
                   }
                 >
-                  <a>Select Option</a>
+                  <a>Comprar</a>
                 </Link>
               ) : product.stock && product.stock > 0 ? (
                 <button
@@ -174,20 +174,20 @@ const ProductGridList = ({
                     cartItem.quantity >= cartItem.stock
                   }
                 >
-                  {cartItem !== undefined ? "Added to cart" : "Add to cart"}
+                  {cartItem !== undefined ? "Adicionado" : "Comprar"}
                 </button>
               ) : (
-                <button disabled>Out of Stock</button>
+                <button disabled>Sem estoque</button>
               )}
             </div>
             <div className="price">
               {product.discount > 0 ? (
                 <Fragment>
-                  <span className="main-price discounted">${productPrice}</span>
-                  <span className="discounted-price">${discountedPrice}</span>
+                  <span className="main-price discounted">R$: {productPrice}</span>
+                  <span className="discounted-price">R$: {discountedPrice}</span>
                 </Fragment>
               ) : (
-                <span className="main-price">${productPrice}</span>
+                <span className="main-price">R$: {productPrice}</span>
               )}
             </div>
           </div>
@@ -197,9 +197,9 @@ const ProductGridList = ({
           {/*=======  single product image  =======*/}
           <div className="product-list__image">
             <Link
-              href={`/shop/product-basic/[slug]?slug=${product.slug}`}
+              href={`/produto/[slug]?slug=${product.slug}`}
               as={
-                process.env.PUBLIC_URL + "/shop/product-basic/" + product.slug
+                process.env.PUBLIC_URL + "/produto/" + product.slug
               }
             >
               <a className="image-wrap">
@@ -225,9 +225,9 @@ const ProductGridList = ({
               ) : (
                 ""
               )}
-              {product.new ? <span className="hot">New</span> : ""}
+              {product.new ? <span className="hot">Novo</span> : ""}
               {product.stock === 0 ? (
-                <span className="out-of-stock">out</span>
+                <span className="out-of-stock">Off</span>
               ) : (
                 ""
               )}
@@ -237,8 +237,8 @@ const ProductGridList = ({
               <Tooltip
                 title={
                   wishlistItem !== undefined
-                    ? "Added to wishlist"
-                    : "Add to wishlist"
+                    ? "Adicionado a lista de desejos"
+                    : "Adicionar a lista de desejos"
                 }
                 position="left"
                 trigger="mouseenter"
@@ -262,8 +262,8 @@ const ProductGridList = ({
               <Tooltip
                 title={
                   compareItem !== undefined
-                    ? "Added to compare"
-                    : "Add to compare"
+                    ? "Adicionado para comparação"
+                    : "Adicionar a comparação"
                 }
                 position="left"
                 trigger="mouseenter"
@@ -307,10 +307,10 @@ const ProductGridList = ({
             <div className="title">
               <h3>
                 <Link
-                  href={`/shop/product-basic/[slug]?slug=${product.slug}`}
+                  href={`/produto/[slug]?slug=${product.slug}`}
                   as={
                     process.env.PUBLIC_URL +
-                    "/shop/product-basic/" +
+                    "/produto/" +
                     product.slug
                   }
                 >
@@ -321,11 +321,11 @@ const ProductGridList = ({
             <div className="price">
               {product.discount > 0 ? (
                 <Fragment>
-                  <span className="main-price discounted">${productPrice}</span>
-                  <span className="discounted-price">${discountedPrice}</span>
+                  <span className="main-price discounted">R$: {productPrice}</span>
+                  <span className="discounted-price">R$: {discountedPrice}</span>
                 </Fragment>
               ) : (
-                <span className="main-price">${productPrice}</span>
+                <span className="main-price">R$: {productPrice}</span>
               )}
             </div>
 
@@ -342,15 +342,15 @@ const ProductGridList = ({
                 </a>
               ) : product.variation && product.variation.length >= 1 ? (
                 <Link
-                  href={`/shop/product-basic/[slug]?slug=${product.slug}`}
+                  href={`/produto/[slug]?slug=${product.slug}`}
                   as={
                     process.env.PUBLIC_URL +
-                    "/shop/product-basic/" +
+                    "/produto/" +
                     product.slug
                   }
                 >
                   <a className="lezada-button lezada-button--medium">
-                    Select Option
+                    Comprar
                   </a>
                 </Link>
               ) : product.stock && product.stock > 0 ? (
@@ -369,7 +369,7 @@ const ProductGridList = ({
                   disabled
                   className="lezada-button lezada-button--medium"
                 >
-                  Out of Stock
+                  Sem estoque
                 </button>
               )}
             </div>

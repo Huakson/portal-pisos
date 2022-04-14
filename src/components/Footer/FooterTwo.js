@@ -50,62 +50,50 @@ const FooterTwo = ({ footerBgClass }) => {
             {/*=======  copyright text  =======*/}
             <div className="footer-single-widget__copyright">
               &copy; {new Date().getFullYear() + " "}
-              <a href="https://www.hasthemes.com" target="_blank">
-                lezada
+              <a href="" target="_blank">
+                Portal pisos
               </a>
-              <span>All Rights Reserved</span>
             </div>
           </Col>
 
           <Col className="footer-single-widget space-mb--50">
-            <h5 className="footer-single-widget__title">ABOUT</h5>
+            <h5 className="footer-single-widget__title">Sobre</h5>
             <nav className="footer-single-widget__nav">
               <ul>
                 <li>
-                  <a href="#">About us</a>
+                  <a href="#">Sobre a empresa</a>
                 </li>
                 <li>
-                  <a href="#">Store location</a>
+                  <a href="#">Localização e atendimento</a>
                 </li>
                 <li>
-                  <a href="#">Contact</a>
-                </li>
-                <li>
-                  <a href="#">Orders tracking</a>
+                  <a href="#">Nossos contatos</a>
                 </li>
               </ul>
             </nav>
           </Col>
 
           <Col className="footer-single-widget space-mb--50">
-            <h5 className="footer-single-widget__title">USEFUL LINKS</h5>
+            <h5 className="footer-single-widget__title">Apoio ao cliente</h5>
             <nav className="footer-single-widget__nav">
               <ul>
                 <li>
-                  <a href="#">Returns</a>
+                  <a href="#">Politica de suporte</a>
                 </li>
                 <li>
-                  <a href="#">Support Policy</a>
+                  <a href="#">Central de atendimento</a>
                 </li>
                 <li>
-                  <a href="#">Size guide</a>
-                </li>
-                <li>
-                  <a href="#">FAQs</a>
+                  <a href="#">Duvidas e respostas</a>
                 </li>
               </ul>
             </nav>
           </Col>
 
           <Col className="footer-single-widget space-mb--50">
-            <h5 className="footer-single-widget__title">FOLLOW US ON</h5>
+            <h5 className="footer-single-widget__title">Nossas redes sociais</h5>
             <nav className="footer-single-widget__nav footer-single-widget__nav--social">
               <ul>
-                <li>
-                  <a href="https://www.twitter.com">
-                    <FaTwitter /> Twitter
-                  </a>
-                </li>
                 <li>
                   <a href="https://www.facebook.com">
                     <FaFacebookF /> Facebook
@@ -116,20 +104,15 @@ const FooterTwo = ({ footerBgClass }) => {
                     <FaInstagram /> Instagram
                   </a>
                 </li>
-                <li>
-                  <a href="https://www.youtube.com">
-                    <FaYoutube /> Youtube
-                  </a>
-                </li>
               </ul>
             </nav>
           </Col>
 
           <Col className="footer-single-widget space-mb--50">
             <div className="footer-subscribe-widget">
-              <h2 className="footer-subscribe-widget__title">Subscribe.</h2>
+              <h2 className="footer-subscribe-widget__title">Ofertas e descontos.</h2>
               <p className="footer-subscribe-widget__subtitle">
-                Subscribe to our newsletter to receive news on update.
+                Informe seu email para receber ofertas e descontos especiais!
               </p>
               {/* email subscription */}
               <SubscribeEmailTwo mailchimpUrl="https://devitems.us11.list-manage.com/subscribe/post?u=6bbb9b6f5827bd842d9640c82&amp;id=05d85f18ef" />

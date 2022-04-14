@@ -17,7 +17,7 @@ const ShopHeader = ({
       <Container className={layoutClass ? layoutClass : ""}>
         <Row className="align-items-center">
           <Col md={5} className="text-center text-md-left">
-            Showing {sortedProductCount} of {productCount} result
+            Mostrando {sortedProductCount} de {productCount} resultados
           </Col>
 
           <Col md={7}>
@@ -28,9 +28,9 @@ const ShopHeader = ({
                     getFilterSortParams("filterSort", e.target.value)
                   }
                 >
-                  <option value="default">Default</option>
-                  <option value="priceHighToLow">Price - High to Low</option>
-                  <option value="priceLowToHigh">Price - Low to High</option>
+                  <option value="default">Padrão</option>
+                  <option value="priceHighToLow">Preço - Maior para o Menor</option>
+                  <option value="priceLowToHigh">Preço - Menor para o Maior</option>
                 </select>
               </div>
 
@@ -72,7 +72,7 @@ const ShopHeader = ({
                   onClick={() => setShopTopFilterStatus(!shopTopFilterStatus)}
                   className={shopTopFilterStatus ? "active" : ""}
                 >
-                  <IoMdFunnel /> Filter
+                  <IoMdFunnel /> Filtrar por
                 </button>
               </div>
             </div>

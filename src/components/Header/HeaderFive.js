@@ -55,47 +55,6 @@ const HeaderFive = ({ aboutOverlay, cartItems, wishlistItems }) => {
       <header
         className={`topbar-shadow ${scroll > headerTop ? "is-sticky ok" : "ok"}`}
       >
-        <div className="header-top-area border-bottom--grey space-pt--10 space-pb--10 d-none d-lg-block">
-          <Container className="wide">
-            <div className="header-top">
-              <div className="header-top__right">
-                <div className="signup-link">
-                  <Link
-                    href="/other/login-register"
-                    as={process.env.PUBLIC_URL + "/other/login-register"}
-                  >
-                    <a>Signup / Login</a>
-                  </Link>
-                </div>
-                <span className="header-separator">|</span>
-                <div className="top-social-icons">
-                  <ul>
-                    <li>
-                      <a href="https://www.twitter.com" target="_blank">
-                        <IoLogoTwitter />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://www.facebook.com" target="_blank">
-                        <IoLogoFacebook />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://www.instagram.com" target="_blank">
-                        <IoLogoInstagram />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://www.youtube.com" target="_blank">
-                        <IoLogoYoutube />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </div>
         <div className="header-bottom-area">
           <Container className="wide">
             <div className="header-content d-flex align-items-center justify-content-between position-relative space-py-mobile-only--30">
@@ -106,7 +65,7 @@ const HeaderFive = ({ aboutOverlay, cartItems, wishlistItems }) => {
                   <a>
                     <img
                       src={process.env.PUBLIC_URL + "/assets/images/logo.png"}
-                      className="img-fluid"
+                      className="img-fluid logo-icon"
                       alt=""
                     />
                   </a>

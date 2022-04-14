@@ -23,7 +23,7 @@ const ShopSidebar = ({ products, getSortParams }) => {
         {/* search widget */}
         <div className="search-widget">
           <form>
-            <input type="search" placeholder="Search products ..." />
+            <input type="search" placeholder="Pesquisar produto ..." />
             <button type="button">
               <IoIosSearch />
             </button>
@@ -34,7 +34,7 @@ const ShopSidebar = ({ products, getSortParams }) => {
       {/* category list */}
       <div className="single-sidebar-widget space-mb--40">
         <h2 className="single-sidebar-widget__title space-mb--30">
-          Categories
+          Categorias
         </h2>
         {categories.length > 0 ? (
           <ul className="single-sidebar-widget__list single-sidebar-widget__list--category">
@@ -46,7 +46,7 @@ const ShopSidebar = ({ products, getSortParams }) => {
                 }}
                 className="active"
               >
-                All categories
+                Todas categorias
               </button>
             </li>
             {categories.map((category, i) => {
@@ -65,13 +65,13 @@ const ShopSidebar = ({ products, getSortParams }) => {
             })}
           </ul>
         ) : (
-          "No categories found"
+          "Nenhuma categoria encontrada"
         )}
       </div>
 
       {/* color list */}
       <div className="single-sidebar-widget space-mb--40">
-        <h2 className="single-sidebar-widget__title space-mb--30">Colors</h2>
+        <h2 className="single-sidebar-widget__title space-mb--30">Tonalidades</h2>
         {colors.length > 0 ? (
           <ul className="single-sidebar-widget__list single-sidebar-widget__list--color">
             {colors.map((color, i) => {
@@ -100,83 +100,6 @@ const ShopSidebar = ({ products, getSortParams }) => {
           </ul>
         ) : (
           "No colors found"
-        )}
-      </div>
-
-      {/* popular products */}
-      <div className="single-sidebar-widget space-mb--40">
-        <h2 className="single-sidebar-widget__title space-mb--30">
-          Popular products
-        </h2>
-        {popularProducts.length > 0 ? (
-          <div className="widget-product-wrapper">
-            {popularProducts.map((product, i) => {
-              const discountedPrice = getDiscountPrice(
-                product.price,
-                product.discount
-              ).toFixed(2);
-              const productPrice = product.price.toFixed(2);
-              return (
-                <div className="single-widget-product-wrapper" key={i}>
-                  <div className="single-widget-product">
-                    <div className="single-widget-product__image">
-                      <Link
-                        href={`/shop/product-basic/[slug]?slug=${product.slug}`}
-                        as={
-                          process.env.PUBLIC_URL +
-                          "/shop/product-basic/" +
-                          product.slug
-                        }
-                      >
-                        <a className="image-wrap">
-                          <img
-                            src={process.env.PUBLIC_URL + product.thumbImage[0]}
-                            className="img-fluid"
-                            alt={product.name}
-                          />
-                        </a>
-                      </Link>
-                    </div>
-                    <div className="single-widget-product__content">
-                      <div className="single-widget-product__content__top">
-                        <h3 className="product-title space-mb--10">
-                          <Link
-                            href={`/shop/product-basic/[slug]?slug=${product.slug}`}
-                            as={
-                              process.env.PUBLIC_URL +
-                              "/shop/product-basic/" +
-                              product.slug
-                            }
-                          >
-                            <a>{product.name}</a>
-                          </Link>
-                        </h3>
-                        <div className="price space-mb--10">
-                          {product.discount > 0 ? (
-                            <Fragment>
-                              <span className="main-price discounted">
-                                ${productPrice}
-                              </span>
-                              <span className="discounted-price">
-                                ${discountedPrice}
-                              </span>
-                            </Fragment>
-                          ) : (
-                            <span className="main-price">${productPrice}</span>
-                          )}
-                        </div>
-                        <div className="rating">
-                          <ProductRating ratingValue={product.rating} />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        ) : (
-          "No products found"
         )}
       </div>
 

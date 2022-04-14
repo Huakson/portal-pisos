@@ -35,7 +35,7 @@ const WishlistOverlay = ({
         </button>
         {/*=======  offcanvas wishlist content container  =======*/}
         <div className="wishlist-overlay__content-container">
-          <h3 className="wishlist-title">Wishlist</h3>
+          <h3 className="wishlist-title">Lista de desejos</h3>
           {wishlistItems.length >= 1 ? (
             <div className="wishlist-product-wrapper">
               <div className="wishlist-product-container">
@@ -95,15 +95,15 @@ const WishlistOverlay = ({
               {/*=======  wishlist buttons  =======*/}
               <div className="wishlist-buttons">
                 <Link
-                  href="/other/wishlist"
-                  as={process.env.PUBLIC_URL + "/other/wishlist"}
+                  href="/lista-de-desejos"
+                  as={process.env.PUBLIC_URL + "/lista-de-desejos"}
                 >
-                  <a>view wishlist</a>
+                  <a>ver lista de desejos</a>
                 </Link>
               </div>
             </div>
           ) : (
-            "No items found in wishlist"
+            "Nenhum produto na sua lista de desejos"
           )}
         </div>
       </div>

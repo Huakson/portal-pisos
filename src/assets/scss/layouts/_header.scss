@@ -7,6 +7,45 @@
   overflow: hidden;
 }
 
+.logo-icon{
+
+  @include respond(large-mobile) {
+    max-height: 90px !important;
+  }
+
+  @include respond(small-mobile) {
+    max-height: 90px !important;
+  }
+
+
+}
+
+.content-black{
+  color: black !important;
+}
+
+.margin-l{
+  margin-left: 20px;
+}
+
+.count {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+
+  position: absolute;
+  top: -5px;
+
+  width: 16px;
+  height: 16px;
+
+  text-align: center;
+
+  color: $white;
+  border-radius: 50%;
+  background-color: $red--one;
+}
+
 .ok::before {
   height: 200% !important;
   top: -50% !important;
@@ -22,7 +61,7 @@
   margin-left: 15px;
 
   p{
-    color: white !important;
+    color: white ;
   }
 }
 
@@ -470,24 +509,6 @@ header {
         a,
         button {
           position: relative;
-          .count {
-            font-size: 12px;
-            font-weight: 500;
-            line-height: 16px;
-
-            position: absolute;
-            top: -5px;
-            right: -10px;
-
-            width: 16px;
-            height: 16px;
-
-            text-align: center;
-
-            color: $white;
-            border-radius: 50%;
-            background-color: $red--one;
-          }
           svg {
             font-size: 20px;
 

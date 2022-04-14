@@ -1,7 +1,28 @@
 import Link from "next/link";
+import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { IoIosArrowDown, IoIosArrowForward, IoIosCart, IoIosHeartEmpty, IoIosSearch, IoMdPerson } from "react-icons/io";
-const Navigation = () => {
+import { connect } from "react-redux";
+import AboutOverlay from "./AboutOverlay";
+import CartOverlay from "./CartOverlay";
+import MobileMenu from "./MobileMenu";
+import SearchOverlay from "./SearchOverlay";
+import WishlistOverlay from "./WishlistOverlay";
+const Navigation = (
+  { cartItems, wishlistItems }
+) => {
+
+  const [scroll, setScroll] = useState(0);
+  const [headerTop, setHeaderTop] = useState(0);
+  const [headerHeight, setHeaderHeight] = useState(0);
+  const [offCanvasAboutActive, setOffCanvasAboutActive] = useState(false);
+  const [offCanvasSearchActive, setOffCanvasSearchActive] = useState(false);
+  const [offCanvasCartActive, setOffCanvasCartActive] = useState(false);
+  const [offCanvasWishlistActive, setOffCanvasWishlistActive] = useState(false);
+  const [offCanvasMobileMenuActive, setOffCanvasMobileMenuActive] = useState(
+    false
+  );
+
   return (
     <nav style={{ boxSizing: "content-box", marginTop: "20px" }} className="header-content__navigation space-pr--15 space-pl--15 d-none d-lg-block">
       <ul className="d-flex align-items-start">
@@ -37,7 +58,7 @@ const Navigation = () => {
                 </button>
               </Col>
 
-              <Col lg={1} className="icon-space">
+              <Col lg={1} className="icon-space" style={{ marginRight: "60px" }}>
                 <button
                   onClick={() => {
                     setOffCanvasWishlistActive(true);
@@ -47,19 +68,20 @@ const Navigation = () => {
                   }}
                 >
                   <div className="d-flex justify-content-center">
-
-                    {/* <IoIosHeartEmpty />
-                {wishlistItems.length >= 1 ? (
-                  <span className="count">
-                    {wishlistItems.length ? wishlistItems.length : ""}
-                  </span>
-                ) : (
-                  ""
-                )} */}
-                    <IoIosHeartEmpty />
-                    <p>Lista de favoritos</p>
+                    <div>
+                      <IoIosHeartEmpty />
+                      {wishlistItems.length >= 1 ? (
+                        <span className="count">
+                          {wishlistItems.length ? wishlistItems.length : ""}
+                        </span>
+                      ) : (
+                        ""
+                      )}
+                    </div>
+                    <p className="margin-l">Lista de favoritos</p>
 
                   </div>
+
                 </button>
               </Col>
 
@@ -73,16 +95,17 @@ const Navigation = () => {
                   }}
                 >
                   <div className="d-flex justify-content-center">
-                    <IoIosCart />
-                    {/* {cartItems.length >= 1 ? (
-                    <span className="count">
-                      {cartItems.length ? cartItems.length : ""}
-                    </span>
-                  ) : (
-                    ""
-                  )} */}
-
-                    <p>Meu carrinho</p>
+                    <div>
+                      <IoIosCart />
+                      {cartItems.length >= 1 ? (
+                        <span className="count">
+                          {cartItems.length ? cartItems.length : ""}
+                        </span>
+                      ) : (
+                        ""
+                      )}
+                    </div>
+                    <p className="margin-l">Meu carrinho</p>
                   </div>
                 </button>
               </Col>
@@ -122,8 +145,32 @@ const Navigation = () => {
         </li>
       </ul>
 
+      {/* cart overlay */}
+      <CartOverlay
+        activeStatus={offCanvasCartActive}
+        getActiveStatus={setOffCanvasCartActive}
+      />
+
+      {/* wishlist overlay */}
+      <WishlistOverlay
+        activeStatus={offCanvasWishlistActive}
+        getActiveStatus={setOffCanvasWishlistActive}
+      />
+      {/* Mobile Menu */}
+      <MobileMenu
+        activeStatus={offCanvasMobileMenuActive}
+        getActiveStatus={setOffCanvasMobileMenuActive}
+      />
+
     </nav>
   );
 };
 
-export default Navigation;
+const mapStateToProps = (state) => {
+  return {
+    cartItems: state.cartData,
+    wishlistItems: state.wishlistData
+  };
+};
+
+export default connect(mapStateToProps)(Navigation);

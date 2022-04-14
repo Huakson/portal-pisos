@@ -44,9 +44,8 @@ const CategorySlider = ({ categoryData, spaceBottomClass }) => {
   };
   return (
     <div
-      className={`product-category-slider-container ${
-        spaceBottomClass ? spaceBottomClass : ""
-      }`}
+      className={`product-category-slider-container ${spaceBottomClass ? spaceBottomClass : ""
+        }`}
     >
       <Container className="wide">
         <Row>
@@ -69,8 +68,8 @@ const CategorySlider = ({ categoryData, spaceBottomClass }) => {
                       <div className="single-category__content single-category__content--two space-mt--25">
                         <div className="title">
                           <Link
-                            href="/shop/left-sidebar"
-                            as={process.env.PUBLIC_URL + "/shop/left-sidebar"}
+                            href="/pisos/"
+                            as={process.env.PUBLIC_URL + "/pisos/"}
                           >
                             <a>{single.name}</a>
                           </Link>
@@ -78,8 +77,8 @@ const CategorySlider = ({ categoryData, spaceBottomClass }) => {
                         <p className="product-count">{single.count}</p>
                       </div>
                       <Link
-                        href="/shop/left-sidebar"
-                        as={process.env.PUBLIC_URL + "/shop/left-sidebar"}
+                        href="/pisos/"
+                        as={process.env.PUBLIC_URL + "/pisos/"}
                       >
                         <a className="banner-link"></a>
                       </Link>

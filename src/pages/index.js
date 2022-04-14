@@ -1,43 +1,78 @@
+import Link from "next/link";
 import { connect } from "react-redux";
+import { Col, Container, Row } from "react-bootstrap";
+import { IoIosAdd } from "react-icons/io";
+import { LayoutFive } from "../components/Layout";
 import { getProducts } from "../lib/product";
-import { LayoutOne } from "../components/Layout";
-import { HeroSliderOne } from "../components/HeroSlider";
-import { ProductTab } from "../components/ProductTab";
-import { ImageCta } from "../components/Cta";
+import { HeroSliderOne, HeroSliderTwo } from "../components/HeroSlider";
+import { CategorySlider } from "../components/Category";
+import { SectionTitleOne, SectionTitleThree } from "../components/SectionTitle";
+import { ProductGridWrapper } from "../components/ProductThumb";
+import { BlogPostSlider } from "../components/Blog";
+import categoryData from "../data/categories/category-one.json";
+import blogData from "../data/blog-posts/blog-post-one.json";
 import heroSliderData from "../data/hero-sliders/hero-slider-one.json";
+import { BreadcrumbOne } from "../components/Breadcrumb";
 import imageCtaData from "../data/image-cta/image-cta-one.json";
+import { ImageCta } from "../components/Cta";
 
-const Home = ({ newProducts, popularProducts, saleProducts }) => {
-  return (
-    <LayoutOne aboutOverlay={false}>
-      {/* hero slider */}
-      <HeroSliderOne sliderData={heroSliderData} />
+const Final = ({ products }) => {
+    return (
+        <LayoutFive>
+            <HeroSliderOne sliderData={heroSliderData} />
 
-      {/* product tab */}
-      <ProductTab
-        newProducts={newProducts}
-        popularProducts={popularProducts}
-        saleProducts={saleProducts}
-      />
+            <BreadcrumbOne
+                pageTitle="Nossas categorias"
+            />
 
-      {/* image cta */}
-      <ImageCta
-        image={imageCtaData.image}
-        tags={imageCtaData.tags}
-        title={imageCtaData.title}
-        url={imageCtaData.url}
-      />
-    </LayoutOne>
-  );
+            <CategorySlider
+                categoryData={categoryData}
+                spaceBottomClass="space-mb--r100"
+            />
+
+            <ImageCta
+                image={imageCtaData.image}
+                tags={imageCtaData.tags}
+                title={imageCtaData.title}
+                url={imageCtaData.url}
+            />
+
+
+            <div className="element-wrapper space-mt--r130 space-mb--r130">
+                <SectionTitleThree
+                    title="Produtos que você pode gostar"
+                    subtitle="Separamos alguns produtos com as melhores ofertas"
+                />
+                <Container>
+                    <Row>
+                        <ProductGridWrapper
+                            products={products}
+                            column={4}
+                            bottomSpace="space-mb--r50"
+                        />
+                        <Col lg={12} className="text-center">
+                            <Link
+                                href="/pisos"
+                                as={process.env.PUBLIC_URL + "/pisos"}
+                            >
+                                <a className="lezada-loadmore-button">
+                                    <IoIosAdd /> Veja mais...
+                                </a>
+                            </Link>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+
+        </LayoutFive>
+    );
 };
 
 const mapStateToProps = (state) => {
-  const products = state.productData;
-  return {
-    newProducts: getProducts(products, "decor", "new", 9),
-    popularProducts: getProducts(products, "decor", "popular", 9),
-    saleProducts: getProducts(products, "decor", "sale", 9)
-  };
+    const products = state.productData;
+    return {
+        products: getProducts(products, "Porcelanato", "popular", 8)
+    };
 };
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps)(Final);

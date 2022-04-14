@@ -81,6 +81,7 @@ const HeaderOne = ({ aboutOverlay, cartItems, wishlistItems }) => {
             </div>
 
             {/* navigation */}
+            
             <Navigation />
 
             {/* icons */}

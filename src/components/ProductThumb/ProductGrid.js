@@ -75,8 +75,8 @@ const ProductGrid = ({
               <Tooltip
                 title={
                   wishlistItem !== undefined
-                    ? "Added to wishlist"
-                    : "Add to wishlist"
+                    ? "Remover da lista de desejos"
+                    : "Adicionar a lista de desejos"
                 }
                 position="left"
                 trigger="mouseenter"
@@ -100,8 +100,8 @@ const ProductGrid = ({
               <Tooltip
                 title={
                   compareItem !== undefined
-                    ? "Added to compare"
-                    : "Add to compare"
+                    ? "Remover da comparação"
+                    : "Adicionar a comparação"
                 }
                 position="left"
                 trigger="mouseenter"
@@ -123,7 +123,7 @@ const ProductGrid = ({
 
               {/* quick view */}
               <Tooltip
-                title="Quick view"
+                title="Visualização rapida"
                 position="left"
                 trigger="mouseenter"
                 animation="shift"
@@ -169,7 +169,7 @@ const ProductGrid = ({
                     product.slug
                   }
                 >
-                  <a>Select Option</a>
+                  <a>Comprar agora</a>
                 </Link>
               ) : product.stock && product.stock > 0 ? (
                 <button
@@ -179,10 +179,10 @@ const ProductGrid = ({
                     cartItem.quantity >= cartItem.stock
                   }
                 >
-                  {cartItem !== undefined ? "Added to cart" : "Add to cart"}
+                  {cartItem !== undefined ? "Comprar agora" : "Comprar agora"}
                 </button>
               ) : (
-                <button disabled>Out of Stock</button>
+                <button disabled>Sem estoque</button>
               )}
             </div>
             <div className="price">

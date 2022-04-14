@@ -45,7 +45,7 @@ const ProductDescription = ({
             <ProductRating ratingValue={product.rating} />
           </div>
           <div className="product-content__rating-count">
-            <a href="#">( {product.ratingCount} customer reviews )</a>
+            <a href="#">( {product.ratingCount} Avaliações )</a>
           </div>
         </div>
       ) : (
@@ -55,11 +55,11 @@ const ProductDescription = ({
       <div className="product-content__price space-mb--20">
         {product.discount > 0 ? (
           <Fragment>
-            <span className="main-price discounted">${productPrice}</span>
-            <span className="main-price">${discountedPrice}</span>
+            <span className="main-price discounted">R$: {productPrice}</span>
+            <span className="main-price">R$: {discountedPrice}</span>
           </Fragment>
         ) : (
-          <span className="main-price">${productPrice} </span>
+          <span className="main-price">R$: {productPrice} </span>
         )}
       </div>
       <div className="product-content__description space-mb--30">
@@ -69,7 +69,7 @@ const ProductDescription = ({
       {product.variation ? (
         <div className="product-content__size-color">
           <div className="product-content__size space-mb--20">
-            <div className="product-content__size__title">Size</div>
+            <div className="product-content__size__title">Dimensão</div>
             <div className="product-content__size__content">
               {product.variation &&
                 product.variation.map((single) => {
@@ -103,7 +103,7 @@ const ProductDescription = ({
             </div>
           </div>
           <div className="product-content__color space-mb--20">
-            <div className="product-content__color__title">Color</div>
+            <div className="product-content__color__title">Tonalidade</div>
             <div className="product-content__color__content">
               {product.variation.map((single, i) => {
                 return (
@@ -152,7 +152,7 @@ const ProductDescription = ({
       ) : (
         <Fragment>
           <div className="product-content__quantity space-mb--40">
-            <div className="product-content__quantity__title">Quantity</div>
+            <div className="product-content__quantity__title">Quantidade</div>
             <div className="cart-plus-minus">
               <button
                 onClick={() =>
@@ -198,14 +198,14 @@ const ProductDescription = ({
                 disabled={productCartQty >= productStock}
                 className="lezada-button lezada-button--medium product-content__cart space-mr--10"
               >
-                Add To Cart
+                Adicionar ao carrinho
               </button>
             ) : (
               <button
                 className="lezada-button lezada-button--medium product-content__ofs space-mr--10"
                 disabled
               >
-                Out of Stock
+                Sem estoque
               </button>
             )}
 
@@ -254,7 +254,7 @@ const ProductDescription = ({
                   <td className="value">{product.sku}</td>
                 </tr>
                 <tr className="single-info">
-                  <td className="title">Categories: </td>
+                  <td className="title">Categorias: </td>
                   <td className="value">
                     {product.category &&
                       product.category.map((item, index, arr) => {
@@ -289,33 +289,6 @@ const ProductDescription = ({
                           </Link>
                         );
                       })}
-                  </td>
-                </tr>
-                <tr className="single-info">
-                  <td className="title">Share on: </td>
-                  <td className="value">
-                    <ul className="social-icons">
-                      <li>
-                        <a href="https://www.twitter.com">
-                          <FaTwitter />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="https://www.facebook.com">
-                          <FaFacebookF />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="https://www.instagram.com">
-                          <FaInstagram />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="https://www.youtube.com">
-                          <FaYoutube />
-                        </a>
-                      </li>
-                    </ul>
                   </td>
                 </tr>
               </tbody>

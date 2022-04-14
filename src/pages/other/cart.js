@@ -11,7 +11,7 @@ import {
   cartItemStock
 } from "../../redux/actions/cartActions";
 import { getDiscountPrice } from "../../lib/product";
-import { LayoutTwo } from "../../components/Layout";
+import { LayoutFive, LayoutTwo } from "../../components/Layout";
 import { BreadcrumbOne } from "../../components/Breadcrumb";
 import { IoIosClose, IoMdCart } from "react-icons/io";
 
@@ -31,21 +31,13 @@ const Cart = ({
   });
 
   return (
-    <LayoutTwo>
+    <LayoutFive>
       {/* breadcrumb */}
       <BreadcrumbOne
-        pageTitle="Cart"
+        pageTitle="Meu carrinho"
         backgroundImage="/assets/images/backgrounds/breadcrumb-bg-2.jpg"
       >
-        <ul className="breadcrumb__list">
-          <li>
-            <Link href="/" as={process.env.PUBLIC_URL + "/"}>
-              <a>Home</a>
-            </Link>
-          </li>
-
-          <li>Cart</li>
-        </ul>
+   
       </BreadcrumbOne>
 
       {/* cart content */}
@@ -59,10 +51,10 @@ const Cart = ({
                   <thead>
                     <tr>
                       <th className="product-name" colSpan="2">
-                        Product
+                        Produto
                       </th>
-                      <th className="product-price">Price</th>
-                      <th className="product-quantity">Quantity</th>
+                      <th className="product-price">Preço</th>
+                      <th className="product-quantity">Quantidade</th>
                       <th className="product-subtotal">Total</th>
                       <th className="product-remove">&nbsp;</th>
                     </tr>
@@ -104,10 +96,7 @@ const Cart = ({
                             {product.selectedProductColor &&
                             product.selectedProductSize ? (
                               <div className="product-variation">
-                                <span>
-                                  Color: {product.selectedProductColor}
-                                </span>
-                                <span>Size: {product.selectedProductSize}</span>
+                                <span>Tamanho: {product.selectedProductSize}</span>
                               </div>
                             ) : (
                               ""
@@ -184,12 +173,12 @@ const Cart = ({
                             <Col md={7}>
                               <input
                                 type="text"
-                                placeholder="Enter your coupon code"
+                                placeholder="Digite seu cupom"
                               />
                             </Col>
                             <Col md={5}>
                               <button className="lezada-button lezada-button--medium">
-                                apply coupon
+                                aplicar cupom de desconto
                               </button>
                             </Col>
                           </Row>
@@ -201,7 +190,7 @@ const Cart = ({
                         className="lezada-button lezada-button--medium"
                         onClick={() => deleteAllFromCart(addToast)}
                       >
-                        clear cart
+                       Limpar tudo
                       </button>
                     </Col>
                   </Row>
@@ -209,7 +198,7 @@ const Cart = ({
               </Col>
               <Col lg={5} className="ml-auto">
                 <div className="cart-calculation-area">
-                  <h2 className="space-mb--40">Cart totals</h2>
+                  <h2 className="space-mb--40">Seu pedido</h2>
                   <table className="cart-calculation-table space-mb--40">
                     <tbody>
                       <tr>
@@ -230,7 +219,7 @@ const Cart = ({
                       as={process.env.PUBLIC_URL + "/other/checkout"}
                     >
                       <a className="lezada-button lezada-button--medium">
-                        proceed to checkout
+                        Finalizar pedido
                       </a>
                     </Link>
                   </div>
@@ -245,13 +234,13 @@ const Cart = ({
                     <IoMdCart />
                   </div>
                   <div className="item-empty-area__text">
-                    <p className="space-mb--30">No items found in cart</p>
+                    <p className="space-mb--30">Nenhum item no seu carrinho</p>
                     <Link
                       href="/shop/left-sidebar"
                       as={process.env.PUBLIC_URL + "/shop/left-sidebar"}
                     >
                       <a className="lezada-button lezada-button--medium">
-                        Shop Now
+                        Comprar agora
                       </a>
                     </Link>
                   </div>
@@ -261,7 +250,7 @@ const Cart = ({
           )}
         </Container>
       </div>
-    </LayoutTwo>
+    </LayoutFive>
   );
 };
 

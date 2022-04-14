@@ -7,11 +7,11 @@ import {
   addToWishlist,
   deleteFromWishlist,
   deleteAllFromWishlist
-} from "../../redux/actions/wishlistActions";
-import { addToCart } from "../../redux/actions/cartActions";
-import { getDiscountPrice } from "../../lib/product";
-import { LayoutFive, LayoutTwo } from "../../components/Layout";
-import { BreadcrumbOne } from "../../components/Breadcrumb";
+} from "../redux/actions/wishlistActions";
+import { addToCart } from "../redux/actions/cartActions";
+import { getDiscountPrice } from "../lib/product";
+import { LayoutFive, LayoutTwo } from "../components/Layout";
+import { BreadcrumbOne } from "../components/Breadcrumb";
 import { IoIosClose, IoIosHeartEmpty } from "react-icons/io";
 
 const Wishlist = ({
