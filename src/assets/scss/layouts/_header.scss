@@ -9,15 +9,23 @@
 
 .logo-icon{
 
+
+  @include respond(small-desktop) {
+    max-width: 90px;
+  }
+
+  @include respond(extra-large-mobile) {
+    max-width: 90px;
+  }
+
   @include respond(large-mobile) {
-    max-height: 90px !important;
+    max-width: 90px;
   }
 
-  @include respond(small-mobile) {
-    max-height: 90px !important;
+  @include respond(extra-small-mobile) {
+    max-width: 90px;
   }
-
-
+  
 }
 
 .content-black{
